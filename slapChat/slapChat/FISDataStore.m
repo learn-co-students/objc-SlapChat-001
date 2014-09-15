@@ -7,6 +7,7 @@
 //
 
 #import "FISDataStore.h"
+#import "Message.h"
 
 @implementation FISDataStore
 @synthesize managedObjectContext = _managedObjectContext;
@@ -17,8 +18,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedDataStore = [[FISDataStore alloc] init];
+        [_sharedDataStore seedData];
     });
-
+    
     return _sharedDataStore;
 }
 
@@ -35,6 +37,28 @@
             abort();
         }
     }
+}
+
+- (NSArray *)fetchMessages
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSError *error;
+    NSArray *messages = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    return messages ? messages : @[];
+}
+
+- (void)seedData
+{
+    for (int count = 0; count < 5; count++) {
+        Message *newMessage = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+        newMessage.content = [NSString stringWithFormat: @"Awesome Message #%i", count+1];
+        newMessage.createdAt = [NSDate date];
+    }
+    [self saveContext];
 }
 
 #pragma mark - Core Data stack

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		726BF17F19C72F670021F232 /* Message+DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 726BF17E19C72F670021F232 /* Message+DateFormatter.m */; };
+		72A8FA3619BA059000373490 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A8FA3519BA059000373490 /* Message.m */; };
 		D879F339195E028000FC5285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F338195E028000FC5285 /* Foundation.framework */; };
 		D879F33B195E028000FC5285 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33A195E028000FC5285 /* CoreGraphics.framework */; };
 		D879F33D195E028000FC5285 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33C195E028000FC5285 /* UIKit.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		726BF17D19C72F670021F232 /* Message+DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+DateFormatter.h"; sourceTree = "<group>"; };
+		726BF17E19C72F670021F232 /* Message+DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Message+DateFormatter.m"; sourceTree = "<group>"; };
+		72A8FA3419BA059000373490 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		72A8FA3519BA059000373490 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		D879F335195E028000FC5285 /* slapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D879F338195E028000FC5285 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D879F33A195E028000FC5285 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72A8FA3719BA059600373490 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				72A8FA3419BA059000373490 /* Message.h */,
+				72A8FA3519BA059000373490 /* Message.m */,
+				726BF17D19C72F670021F232 /* Message+DateFormatter.h */,
+				726BF17E19C72F670021F232 /* Message+DateFormatter.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		D879F32C195E028000FC5285 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D879F373195E02C000FC5285 /* slapChat.xcdatamodeld */,
+				72A8FA3719BA059600373490 /* models */,
 				D879F370195E02B400FC5285 /* FISDataStore.h */,
 				D879F371195E02B400FC5285 /* FISDataStore.m */,
 				D879F347195E028000FC5285 /* FISAppDelegate.h */,
@@ -263,9 +281,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D879F345195E028000FC5285 /* main.m in Sources */,
+				72A8FA3619BA059000373490 /* Message.m in Sources */,
 				D879F375195E02C000FC5285 /* slapChat.xcdatamodeld in Sources */,
 				D879F372195E02B400FC5285 /* FISDataStore.m in Sources */,
 				D879F349195E028000FC5285 /* FISAppDelegate.m in Sources */,
+				726BF17F19C72F670021F232 /* Message+DateFormatter.m in Sources */,
 				D879F37A195E032D00FC5285 /* FISTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +491,7 @@
 				D879F369195E028000FC5285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D879F36A195E028000FC5285 /* Build configuration list for PBXNativeTarget "slapChatTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +500,7 @@
 				D879F36C195E028000FC5285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

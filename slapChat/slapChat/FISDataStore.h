@@ -15,4 +15,5 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)saveContext;
+- (NSArray *)fetchMessages;
 @end
