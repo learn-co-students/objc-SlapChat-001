@@ -1,7 +1,4 @@
----
-tags: coredata, tableviews
-languages: objc
----
+
 
 Slap Chat
 ==========
