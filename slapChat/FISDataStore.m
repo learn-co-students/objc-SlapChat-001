@@ -12,18 +12,25 @@
 @implementation FISDataStore
 @synthesize managedObjectContext = _managedObjectContext;
 
-
 + (instancetype)sharedDataStore {
     static FISDataStore *_sharedDataStore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedDataStore = [[FISDataStore alloc] init];
-        [_sharedDataStore seedData];
     });
     
     return _sharedDataStore;
 }
 
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        [self seedData];
+    }
+    return self;
+}
 
 - (void)saveContext
 {
@@ -48,11 +55,15 @@
     NSError *error;
     NSArray *messages = [self.managedObjectContext executeFetchRequest:request error:&error];
     
-    return messages ? messages : @[];
+    return messages;
 }
 
 - (void)seedData
 {
+    if ([self fetchMessages].count > 0){
+        return;
+    }
+    
     for (int count = 0; count < 5; count++) {
         Message *newMessage = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
         newMessage.content = [NSString stringWithFormat: @"Awesome Message #%i", count+1];
