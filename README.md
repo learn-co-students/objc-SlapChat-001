@@ -1,4 +1,5 @@
-
+DEPRECATED Oct 21, 2015 - Mark Murray  
+The contents of the lab have been combined with SlapChat Add. The "space" between the labs was deemed too incremental to publish both. This repository is no longer active.
 
 Slap Chat
 ==========
