@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Message.h"
+#import "FISDataStore.h"
 
 @interface FISTableViewController : UITableViewController
+
+@property (strong,nonatomic) NSArray *messages;
 
 @end

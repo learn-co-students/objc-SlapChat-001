@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Message.h"
 
 @interface FISDataStore : NSObject
 
 + (instancetype) sharedDataStore;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-- (void)saveContext;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectModel *model;
+
+
+- (void)save;
+-(NSArray *)loadAllItems;
+-(Message *)createMessage;
 @end
